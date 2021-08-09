@@ -87,7 +87,7 @@ h2{
 	text-decoration:underline;
 }
 
-@media all and (min-width: 1000px){
+@media all and (max-width: 800px){
 	#form{
 		margin:0 auto;
 		background:transparent;
