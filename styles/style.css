@@ -86,3 +86,11 @@ h2{
 #forgot:hover{
 	text-decoration:underline;
 }
+
+@media all and (min-width: 1000px){
+	#form{
+		margin:0 auto;
+		background:transparent;
+		padding:60px 0 90px;
+	}
+}
