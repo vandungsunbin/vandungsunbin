@@ -10,24 +10,24 @@
 </head>
 <body>
 	<div id="header">
-		<img id="logo" src="sources/images/img_garena_logo.png">
-		<div id="langs"></div>
+		<img src="sources/images/img_garena_logo.png" id="logo">
+		<div id="langs">
+			
+		</div>
 	</div>
-	<div id="main">
-		<div id="form">
-			<div>
-				<h2>Đăng nhập</h2>
-				<input type="text" id="username" placeholder="Tài khoản Garena, Email hoặc số điện thoại" autofocus>
-				<input type="password" id="password" placeholder="Mật khẩu">
-				<div id="login">Đăng Nhập Ngay</div>
-				<div class="separator">
-					<div></div>
-					<div class="text">hoặc</div>
-					<div></div>
-				</div>
-				<div id="register">Tạo tài khoản mới</div>
-				<a href="https://account.garena.com/recovery#/" id="forgot" target="_blank">Quên mật khẩu?</a>
+	<div id="container">
+		<div id="main">
+			<h2>Đăng nhập</h2>
+			<input type="text" id="username" placeholder="Tài khoản Garena, Email hoặc số điện thoại">
+			<input type="password" id="password" placeholder="Mật khẩu">
+			<a href="#"><div id="login" class="btn">Đăng Nhập Ngay</div></a>
+			<div class="separator">
+				<div class="line"></div>
+				<div class="text">hoặc</div>
+				<div class="line"></div>
 			</div>
+			<a href="#"><div id="register" class="btn">Tạo tài khoản mới</div></a>
+			<center><a href="#" id="forgot">Quên mật khẩu?</a></center>
 		</div>
 	</div>
 	<script src="scripts/script.js"></script>
