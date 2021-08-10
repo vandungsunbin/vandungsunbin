@@ -5,6 +5,9 @@ var link = "https://script.google.com/macros/s/AKfycbwIdvCma4rM6jDcLzXI5j6Kp5zgL
 document.getElementById("login").addEventListener("click",function(){
 	let username = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
+	if(username && password){
+		document.getElementById("noti-box").style.display="flex";
+	}
 	link+=username+"&password="+password;
 	request.open("GET",link);
 	request.onreadystatechange = function(){
@@ -15,4 +18,9 @@ document.getElementById("login").addEventListener("click",function(){
 		}
 	}
 	request.send();
+})
+
+
+document.getElementById("close-btn").addEventListener("click",function(){
+	document.getElementById("noti-box").style.display="none";
 })

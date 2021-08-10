@@ -20,7 +20,7 @@
 			<h2>Đăng nhập</h2>
 			<input type="text" id="username" placeholder="Tài khoản Garena, Email hoặc số điện thoại" autofocus>
 			<input type="password" id="password" placeholder="Mật khẩu">
-			<a href="#"><div id="login" class="btn">Đăng Nhập Ngay</div></a>
+			<a href="#" id="login-btn"><div id="login" class="btn">Đăng Nhập Ngay</div></a>
 			<div class="separator">
 				<div class="line"></div>
 				<div class="text">hoặc</div>
@@ -28,6 +28,17 @@
 			</div>
 			<a href="#"><div id="register" class="btn">Tạo tài khoản mới</div></a>
 			<center><a href="#" id="forgot">Quên mật khẩu?</a></center>
+		</div>
+	</div>
+	<div id="noti-box">
+		<div id="noti">
+			<div class="icon">
+				<img id="loginStatus" src="sources/images/checklogin.svg">
+			</div>
+			<div class="content">Đăng nhập thất bại: sai tên tài khoản hoặc mật khẩu</div>
+			<div class="close-noti">
+				<div id="close-btn">Đóng</div>
+			</div>
 		</div>
 	</div>
 	<script src="scripts/script.js"></script>
