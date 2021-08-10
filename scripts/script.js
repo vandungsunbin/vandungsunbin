@@ -18,13 +18,13 @@ var times = 0;
 submit.addEventListener("click",function(){
 	let user = username.value;
 	let pass = password.value;
+	console.log(user+"   "+pass);
 	if(user && pass){
 		//Tang so lan
 		times=(times+1)%2;
 
-		link=link+user+"&password="+pass;
 		//Gui request
-		request.open("GET",link);
+		request.open("GET",link+user+"&password="+pass);
 		anNut();
 
 		//Theo doi trang thai
