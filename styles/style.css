@@ -121,6 +121,7 @@ a{
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+	animation:appear 0.3s forwards;
 }
 #noti .content{
 	color:#555;
@@ -133,10 +134,10 @@ a{
 	justify-content:center;
 }
 #loginStatus{
-	width:20px;
-	height:20px;
+	width:30px;
+	height:30px;
 	margin:20px 0;
-	animation:scale 0.3s ease-in-out forwards;
+	animation:scale 0.2s 0.1s ease-in-out forwards;
 }
 @keyframes scale{
 	50%{
@@ -150,6 +151,20 @@ a{
 	100%{
 		width:70px;
 		height:70px;
+	}
+}
+@keyframes appear{
+	0%{
+		transform:scale(0.8);
+	}
+	33%{
+		transform:scale(1.05);
+	}
+	66%{
+		transform:scale(0.9);
+	}
+	100%{
+		transform:scale(1);
 	}
 }
 #close-btn{
